@@ -1,0 +1,49 @@
+priority -40
+
+snippet doc "begin document env" b
+\begin{document}
+$0
+\end{document}
+endsnippet
+snippet frame "begin frame env" b
+\begin{frame}{${1:frametitle}}
+$0
+\end{frame}
+endsnippet
+snippet minted "begin minted env" b
+\begin{minted}{${1:language}}
+$0
+\end{minted}
+endsnippet
+snippet minipage "begin minipage env" b
+\begin{minipage}{${1:width}}
+\end{minipage}
+endsnippet
+#snippet "b(egin)?" "begin{} / end{}" br
+#\begin{${1:something}}
+	#${0:${VISUAL}}
+#\end{$1}
+#endsnippet
+snippet umlclass "umlclass with type" b
+\umlclass[type=${1:class}, x=$2, y=$3]{${4:class name}}{%
+	% for data members
+	$5
+}{%
+	% for methods
+	$6
+}
+endsnippet 
+
+snippet quote "quote env" b
+\begin{quote}
+{\small \sffamily
+	$0
+}
+\end{quote}
+endsnippet 
+snippet poem "poem env" b
+\begin{poem}{${1:author}}{${2:title}}
+	$0
+\end{poem}
+
+endsnippet 
