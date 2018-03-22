@@ -10,14 +10,22 @@ snippet frame "begin frame env" b
 $0
 \end{frame}
 endsnippet
+snippet framec "begin frame env with code" b
+\begin{frame}[fragile]{${1:frametitle}}
+	\begin{minted}{${2:language}}
+		$0
+	\end{minted}
+\end{frame}
+endsnippet
+
 snippet minted "begin minted env" b
 \begin{minted}{${1:language}}
 $0
 \end{minted}
 endsnippet
 snippet minipage "begin minipage env" b
-\begin{minipage}{${1:width}}
-\end{minipage}
+\begin{minipage}{${1:.47}\textwidth}
+\end{minipage}%
 endsnippet
 #snippet "b(egin)?" "begin{} / end{}" br
 #\begin{${1:something}}
@@ -45,5 +53,42 @@ snippet poem "poem env" b
 \begin{poem}{${1:author}}{${2:title}}
 	$0
 \end{poem}
-
 endsnippet 
+snippet tikzp "only tikzpicture environment" b
+\begin{tikzpicture}
+	$0
+\end{tikzpicture}
+endsnippet
+snippet node "node" b
+\node[${1:options}] ${2:node name} at (${3:x}, ${4:y}) {${5:text}};
+endsnippet
+
+snippet %% "Comments Line" b
+%%%%%%%%%%%%%%%%%%% ${1:Description for you purpose} %%%%%%%%%%%%%%%%%%%%
+$0
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+endsnippet
+
+snippet ttab "table float environment" b
+\begin{ttab}{${1:title}}{${2:label}}
+	$0
+\end{ttab}
+endsnippet
+snippet tfig "figure float environment" b
+\begin{tfig}{${1:title}}{${2:label}}
+	$0
+\end{tfig}
+endsnippet
+
+snippet tab "tabular environment" b
+\begin{tabular}{${1:ll}}
+	\toprule
+	$0
+	\midrule
+	\bottomrule
+\end{tabular}
+endsnippet
+#snippet subsec "subsection" b
+#\subsection{${1:title}}
+#\label{subsec:}
+#endsnippet
