@@ -1,0 +1,8 @@
+
+snippet table "create table" b
+create table if not exists ${1:table name}(
+	id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+	PRIMARY KEY(id)
+	-- FOREIGN KEY () REFERENCES table(key)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+endsnippet

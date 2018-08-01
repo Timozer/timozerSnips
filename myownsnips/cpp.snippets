@@ -1,0 +1,61 @@
+
+priority -40
+
+snippet def "#define ..."
+#define ${1} ${2:value}
+endsnippet
+
+snippet inc "<header>" b
+#include <${1:iostream}>
+endsnippet
+
+snippet inc. "'header'" b
+#include "${1:iostream}"
+endsnippet
+
+snippet ifn "#ifndef ... #define ... #endif"
+#ifndef ${1/([A-Za-z0-9_]+).*/$1/}
+#define ${1:SYMBOL}
+
+$0
+
+#endif /* ifndef $1 */
+endsnippet
+
+snippet def "#define" b
+#define ${1:define} ${2:value}
+endsnippet
+
+snippet main "main function" b
+int main(int argc, const char *argv[])
+{
+	${0}
+	return 0;
+}
+endsnippet
+
+snippet for "for int loop (fori)"
+for (${4:int} ${2:i} = 0; $2 < ${1:count}; ${3:++$2}) 
+{
+	${VISUAL}${0}
+}
+endsnippet
+
+snippet cl "class .. (class)"
+class ${1:`!p snip.rv = snip.basename or "name"`}
+{
+public:
+	${1/(\w+).*/$1/} (${2:arguments});
+	virtual ~${1/(\w+).*/$1/} ();
+
+private:
+	${0:/* data */}
+};
+endsnippet
+
+snippet struct "struct" b
+struct ${1:Name}
+{
+	$0
+};
+endsnippet
